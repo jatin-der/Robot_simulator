@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Robot Simulator</title>
+  <style>
+    body { background: #222; margin: 0; overflow: hidden; }
+    canvas { background: #eee; display: block; margin: auto; }
+  </style>
+</head>
+<body>
+  <canvas id="simCanvas" width="800" height="600"></canvas>
+  <script>
+    const canvas = document.getElementById('simCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let robot = { x: 400, y: 300, r: 15, color: "red" };
+    let goal = { x: 50, y: 50, r: 10, color: "green" };
+    let obstacles = [
+      { x: 200, y: 150, w: 50, h: 50 },
+      { x: 500, y: 400, w: 70, h: 70 }
+    ];
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "blue";
+      for (let o of obstacles) {
+        ctx.fillRect(o.x, o.y, o.w, o.h);
+      }
+
+      ctx.beginPath();
+      ctx.arc(goal.x, goal.y, goal.r, 0, 2 * Math.PI);
+      ctx.fillStyle = goal.color;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(robot.x, robot.y, robot.r, 0, 2 * Math.PI);
+      ctx.fillStyle = robot.color;
+      ctx.fill();
+    }
+
+    function updateRobot(x, y) {
+      robot.x = x;
+      robot.y = y;
+      draw();
+    }
+
+    draw();
+  </script>
+</body>
+</html>
