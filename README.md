@@ -19,4 +19,37 @@ This project implements an **autonomous collision-free route planner** for a rob
 
 
 
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Start the simulation:
+
+.\start_sim.ps1
+
+
+Open in browser:
+
+http://localhost:8000/index.html
+
+
+Watch the robot move automatically 🚀
+
+Levels
+
+Level 1 → Robot avoids static obstacles
+
+Level 2 → Robot avoids moving obstacles
+
+Level 3 → Analysis of obstacle speed vs collisions
+
+Results
+
+Videos of runs are available in the videos/ folder.
+
+Level 1 (static obstacles): average X collisions
+
+Level 2 (moving obstacles): average Y collisions
+
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/a4eba78e-e731-478d-a0fe-fb008a6ccae4" />
